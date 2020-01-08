@@ -23,3 +23,51 @@
     display: none;
     
 }
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.cont{
+    justify-content: center;
+    /* justify-content: space-between; */
+    margin-top: 50px;
+    height: 300px;
+}
+
+.tar{
+    display:inline;
+    /* height: auto; */
+    /* margin-top: 20px; */
+    padding: 40px;
+}
+.elemento{
+    margin-left: 70px;
+    margin-right: 70px;
+
+}
+
+.overflow{
+    overflow: hidden;
+}
+
+.divBoton{
+    display: flex;
+    justify-content: center;
+}
+
+.boton{
+    margin: 20px;
+    align-items: center;
+    height:40px;
+    width: 170px ;
+    background-color: black;
+}
+
+.textoBoton{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 18px;
+}
+
