@@ -7,7 +7,7 @@ let imdbID=[ "tt0021884","tt0154506","tt0012349","tt0497351","tt0045758","tt4362
       fetch(link)
         .then(datos => datos.json())
         .then(datos =>{
-        caja.innerHTML += `
+        /*caja.innerHTML += `
 
         
         <div class="col-sm-12 col-md-6 col-lg-3 tar">
@@ -15,7 +15,7 @@ let imdbID=[ "tt0021884","tt0154506","tt0012349","tt0497351","tt0045758","tt4362
         <img src= "${datos.Poster}" class="img-fluid">
         </div>
 
-          `; 
+          `; */
       })
         .catch(error=>console.log(error))
     
@@ -68,11 +68,10 @@ console.log(peli.Poster)
 })
 
 
-
   // FUNCIÓN DE BOTON "VER MAS"
 
   // Oculta peliculas
-  function ocultar(){
+ /* function ocultar(){
     document.getElementById("caja").style.display = "none";
   }
   ocultar();
@@ -86,7 +85,7 @@ console.log(peli.Poster)
   }
   mostrar();
   
-  });
+  });*/
 
     
 //funcion mostrar barra de busqueda
@@ -105,9 +104,7 @@ let searchPeli = document.getElementById('buscar').addEventListener('keydown', (
         let caja = document.getElementById("caja")
         let search = data.Search
         let array =[]
-    
-//     console.log(data)
-                  
+                 
     search.forEach(element => {
        array.push(element.imdbID)
     });
@@ -117,13 +114,13 @@ let searchPeli = document.getElementById('buscar').addEventListener('keydown', (
         .then(datos => datos.json())
         .then(datos =>{
           caja.innerHTML += `
-          <p>${datos.Title} </p>
-          
-          <img src= "${datos.Poster}">
-          <p>duracion ${datos.Runtime} </p>
-          <p>año ${datos.Year} </p>
-          <p>id${datos.id} </p>
-          
+          <div class="card bg-dark text-white">
+          <img src="${datos.Poster}" class="card-img" alt="...">
+          <div class="card-img-overlay">
+          <h5 class="card-title"></h5>
+          <p class="card-text">duracion ${datos.Runtime} </p>
+          </div>
+          </div>
           `;
         })
         .catch(error=>console.log(error));
