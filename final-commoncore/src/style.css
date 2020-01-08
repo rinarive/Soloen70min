@@ -1,0 +1,25 @@
+.categ{
+    justify-content:center;
+    display: inline-block;
+}
+.categ:hover{
+    cursor: pointer;
+}
+.logo{
+
+    width: 15%;
+}
+.aside{
+    justify-content: flex-start;
+}
+
+#top{
+    background-color: #f5c518;
+    height:10%;
+    
+}
+
+.search{
+    display: none;
+    
+}

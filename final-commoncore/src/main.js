@@ -18,9 +18,13 @@ let imdbID=[ "tt0021884","tt0154506","tt0012349","tt0497351","tt0045758","tt4362
     
   });
     
-
+//funcion mostrar barra de busqueda
+let open = document.getElementById("open").addEventListener("click",()=>{
+  let search=document.getElementById("buscar");
+  search.style.display="block";
+});
+  //funcion buscar cualquier pelicula.
 let div_peliculas = document.getElementById("peliculas");
-//funcion buscar cualquier pelicula.
 let searchPeli = document.getElementById('buscar').addEventListener('keydown', (e) => {
 	if (e.keyCode === 13) {
      fetch(`http://www.omdbapi.com/?s=${e.target.value}&plot=full&apikey=3d9ea92f`)
@@ -41,17 +45,62 @@ let searchPeli = document.getElementById('buscar').addEventListener('keydown', (
       fetch(link)
         .then(datos => datos.json())
         .then(datos =>{
-           
-         caja.innerHTML += `
-            <p>${datos.Title} </p>
-            <img src= "${datos.Poster}">
-            <p>duracion ${datos.Runtime} </p>
-            <p>año ${datos.Year} </p>
-            
-            `;
+          caja.innerHTML += `
+          <p>${datos.Title} </p>
+          
+          <img src= "${datos.Poster}">
+          <p>duracion ${datos.Runtime} </p>
+          <p>año ${datos.Year} </p>
+          <p>id${datos.id} </p>
+          
+          `;
         })
-          .catch(error=>console.log(error));
-     });        
+        .catch(error=>console.log(error));
+      });        
+    
    });
  };
 });
+
+let peli = document.getElementById("").addEventListener('click',()=>{
+ ` 
+ `
+
+
+})
+//por genero 
+
+let mejorPeli = document.getElementById('genero').addEventListener('click', (show)=>{
+
+  console.log("sirve");
+
+  let link = `https://api.themoviedb.org/3/genre/movie/list?api_key=385428d3c9bd5516fe74173c3835c604`
+  fetch(link)
+    .then(datos => datos.json())    
+    .then(datos =>{
+          console.log (datos);
+       
+        })
+          .catch(error=>console.log(error));
+ 
+      });
+
+      // 
+     //por personas
+  let actor = document.getElementById('actores').addEventListener('click', (show)=>{
+
+    console.log('sorve');
+
+      let link = `https://api.themoviedb.org/3/person/28?api_key=385428d3c9bd5516fe74173c3835c604`
+      fetch(link)
+        .then(datos => datos.json())    
+        .then(datos =>{
+              console.log (datos);
+           
+            })
+              .catch(error=>console.log(error));
+
+
+
+
+     });
