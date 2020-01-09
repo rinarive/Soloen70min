@@ -15,8 +15,7 @@ let imdbID=[ "tt0021884","tt0154506","tt0012349","tt0497351","tt0045758","tt4362
         <img src= "${datos.Poster}" class="img-fluid">
         </div>
 
-          `; */
-      })
+          `; */      })
         .catch(error=>console.log(error))
     
   });
@@ -63,15 +62,96 @@ console.log(peli.Poster)
   }).catch(e =>{
 
     console.log(e)
+    
+    first.addEventListener("click",()=>{`
+    
+    <div class="card weather-card">
+    
+    <div class="card-body pb-3">
+    <div class="d-flex justify-content-between">
+    <p class="display-1 degree">${peli.Runtime}</p>
+    <i class="fas fa-sun-o fa-5x pt-3 amber-text"></i>
+    </div>
+    <div class="d-flex justify-content-between mb-4">
+    <h4 class="card-title font-weight-bold">${peli.Title}</h4>
+    <p><i class="fas fa-tint fa-lg text-info pr-2"></i>${peli.Year}</p>
+    <p><i class="fas fa-leaf fa-lg grey-text pr-2"></i>${peli.imdbID}</p>
+    </div>
+    <div class="progress md-progress">
+    <div class="progress-bar black" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    
+    
+    
+    
+    <hr class="">
+    
+    
+    </div>
+    
+    </div>
+    
+    </div>`
+    
+    
+    
+    
   })
+    
+ })
 
 })
 
 
+
+//funcion mostrar barra de busqueda
+let open = document.getElementById("open").addEventListener("click",()=>{
+let search=document.getElementById("buscar");
+search.style.display="block";
+});
+//funcion buscar cualquier pelicula.
+let div_peliculas = document.getElementById("peliculas");
+let searchPeli = document.getElementById('buscar').addEventListener('keydown', (e) => {
+if (e.keyCode === 13) {
+ fetch(`http://www.omdbapi.com/?s=${e.target.value}&plot=full&apikey=3d9ea92f`)
+  .then(datos => datos.json())    
+  .then(data => {
+
+    let caja = document.getElementById("caja")
+    let search = data.Search
+    let array =[]
+             
+search.forEach(element => {
+   array.push(element.imdbID)
+});
+
+array.forEach(id => {
+  let link = "http://www.omdbapi.com/?apikey=bab254d4&i="+ id
+  fetch(link)
+    .then(datos => datos.json())
+    .then(datos =>{
+      caja.innerHTML += `
+      <div class="busqueda">
+      <div class="card bg-dark text-white">
+      <img src="${datos.Poster}" class="card-img" alt="...">
+      <div class="card-img-overlay">
+      <h5 class="card-title"></h5>
+      <p class="card-text">duracion ${datos.Runtime} </p>
+      </div>
+      </div>
+      </div>
+      `;
+    })
+    .catch(error=>console.log(error));
+  });        
+
+});
+};
+});
   // FUNCIÓN DE BOTON "VER MAS"
 
   // Oculta peliculas
- /* function ocultar(){
+  /*function ocultar(){
     document.getElementById("caja").style.display = "none";
   }
   ocultar();
@@ -87,55 +167,23 @@ console.log(peli.Poster)
   
   });*/
 
-    
-//funcion mostrar barra de busqueda
-let open = document.getElementById("open").addEventListener("click",()=>{
-  let search=document.getElementById("buscar");
-  search.style.display="block";
+
+/*let peli = document.querySelector(".carousel-item").addEventListener('click',()=>{
+
+const showModal = (datos) => {
+  modal.style.display = 'block';`
+
+  document.getElementById('modal-name').innerHTML = `<h1> ${datos.Runtime}</h1>`;
+  document.getElementById('modal-title').innerHTML = `<h2> ${datos.Title} </h2>`;
+  document.getElementById('modal-attack').innerHTML = `<P> ${datos.year} </p>`;
+
+    modal.style.display = 'none';
+  };`
+};
+ 
+
+
 });
-  //funcion buscar cualquier pelicula.
-let div_peliculas = document.getElementById("peliculas");
-let searchPeli = document.getElementById('buscar').addEventListener('keydown', (e) => {
-	if (e.keyCode === 13) {
-     fetch(`http://www.omdbapi.com/?s=${e.target.value}&plot=full&apikey=3d9ea92f`)
-      .then(datos => datos.json())    
-      .then(data => {
-
-        let caja = document.getElementById("caja")
-        let search = data.Search
-        let array =[]
-                 
-    search.forEach(element => {
-       array.push(element.imdbID)
-    });
-    array.forEach(id => {
-      let link = "http://www.omdbapi.com/?apikey=bab254d4&i="+ id
-      fetch(link)
-        .then(datos => datos.json())
-        .then(datos =>{
-          caja.innerHTML += `
-          <div class="card bg-dark text-white">
-          <img src="${datos.Poster}" class="card-img" alt="...">
-          <div class="card-img-overlay">
-          <h5 class="card-title"></h5>
-          <p class="card-text">duracion ${datos.Runtime} </p>
-          </div>
-          </div>
-          `;
-        })
-        .catch(error=>console.log(error));
-      });        
-    
-   });
- };
-});
-
-let peli = document.getElementById("").addEventListener('click',()=>{
- ` 
- `
-
-
-})
 //por genero 
 
 let mejorPeli = document.getElementById('genero').addEventListener('click', (show)=>{
@@ -171,4 +219,4 @@ let mejorPeli = document.getElementById('genero').addEventListener('click', (sho
 
 
 
-     });
+     });*/
