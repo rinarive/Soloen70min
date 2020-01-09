@@ -62,7 +62,43 @@ console.log(peli.Poster)
   }).catch(e =>{
 
     console.log(e)
+    
+    first.addEventListener("click",()=>{`
+    
+    <div class="card weather-card">
+    
+    <div class="card-body pb-3">
+    <div class="d-flex justify-content-between">
+    <p class="display-1 degree">${peli.Runtime}</p>
+    <i class="fas fa-sun-o fa-5x pt-3 amber-text"></i>
+    </div>
+    <div class="d-flex justify-content-between mb-4">
+    <h4 class="card-title font-weight-bold">${peli.Title}</h4>
+    <p><i class="fas fa-tint fa-lg text-info pr-2"></i>${peli.Year}</p>
+    <p><i class="fas fa-leaf fa-lg grey-text pr-2"></i>${peli.imdbID}</p>
+    </div>
+    <div class="progress md-progress">
+    <div class="progress-bar black" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    
+    
+    
+    
+    <hr class="">
+    
+    
+    </div>
+    
+    </div>
+    
+    </div>`
+    
+    
+    
+    
   })
+    
+ })
 
 })
 
