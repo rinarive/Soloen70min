@@ -4,7 +4,7 @@
 
 **Solo en 70 minutos** es una plataforma digital donde los espectadores frecuentes de películas que disponen de poco tiempo para hacerlo, podrán encontrar cine de corta duración y con buena evaluación de la crítica para ver.
 
-Para ver ![clickea aquí] aqui va el link de github rena 
+Para ver [clickea aquí](https://natigrottes.github.io/final-commoncore/final-commoncore/src/index.html)
 
 ![PORTADA](src/imagesREADME/PORTADA.png)
 
@@ -195,7 +195,7 @@ Y tal vez no logramos con todo y de la forma que nos hubiera gustado, sin embarg
 
 ## Proyecto realizado por:
 
-- Rena Rivo
+- Rena Rivero
 - Camila Rojas 
 - Camila Osores 
 - Nataly Cuevas
