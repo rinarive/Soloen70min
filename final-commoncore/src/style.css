@@ -26,9 +26,18 @@
   align-items: center;
   width: auto;
   height: auto;
+}
+
+.letFooter{
+    color: white;
+}
+
+ .textFooter{
+    font-size: 10px;
+    color: white;
+ }
   
   
-  }
 .icon{
     text-align: center;
 }
@@ -146,3 +155,4 @@
     width: 50%;
     height: 40%; /* Could be more or less, depending on screen size */
   }
+
