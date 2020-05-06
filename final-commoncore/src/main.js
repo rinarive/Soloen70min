@@ -3,7 +3,7 @@
 let imdbID=[ "tt0021884","tt0154506","tt0012349","tt0497351","tt0045758","tt4362764","tt1907704","tt6597824","tt2413134","tt0056119","tt0475224", "tt3472226"];
     imdbID.forEach(id => {
     
-      let link = "http://www.omdbapi.com/?apikey=bab254d4&i="+ id
+      let link = "https://www.omdbapi.com/?apikey=bab254d4&i="+ id
       fetch(link)
         .then(datos => datos.json())
         .then(datos =>{
@@ -28,7 +28,7 @@ let url ;
 let indice = 0;
 
 imdbID.forEach(id =>{
-url = 'http://www.omdbapi.com/?apikey=bab254d4&i='+id;
+url = 'https://www.omdbapi.com/?apikey=bab254d4&i='+id;
  
 fetch(url)
   .then(datos => datos.json())
@@ -113,7 +113,7 @@ search.style.display="block";
 let div_peliculas = document.getElementById("peliculas");
 let searchPeli = document.getElementById('buscar').addEventListener('keydown', (e) => {
 if (e.keyCode === 13) {
- fetch(`http://www.omdbapi.com/?s=${e.target.value}&plot=full&apikey=3d9ea92f`)
+ fetch(`https://www.omdbapi.com/?s=${e.target.value}&plot=full&apikey=3d9ea92f`)
   .then(datos => datos.json())    
   .then(data => {
 
@@ -126,7 +126,7 @@ search.forEach(element => {
 });
 
 array.forEach(id => {
-  let link = "http://www.omdbapi.com/?apikey=bab254d4&i="+ id
+  let link = "https://www.omdbapi.com/?apikey=bab254d4&i="+ id
   fetch(link)
     .then(datos => datos.json())
     .then(datos =>{
